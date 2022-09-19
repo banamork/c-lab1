@@ -10,14 +10,14 @@ using namespace std;
 int main(){
     Matrix* matr = new Matrix;
     int length, heigth;
-    std::cout << "Введите ширину вашей матрицы" << " " << std::endl;
-    std::cin >> length;
-    std::cout << "Введите высоту вашей матрицы" << " " << std::endl;
-    std::cin >> heigth;
+    cout << "Введите ширину вашей матрицы" << " " << endl;
+    cin >> length;
+    cout << "Введите высоту вашей матрицы" << " " << endl;
+    cin >> heigth;
     inputMatrix(*matr, length, heigth);
     printMatrix(*matr);
     generateVector(*matr);
-    std::cout << "Это все! Пока!" << " " << std::endl;
+    cout << "Это все! Пока!" << " " << endl;
     delete matr;
     return 0;
 }

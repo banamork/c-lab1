@@ -5,51 +5,69 @@
 #include <algorithm>
 
 
-int inputMatrix(Matrix& matr, int length, int height){
+void inputMatrix(Matrix& matr, int length, int height){
     int n;
     matr.lenght = length;
     matr.height = height;
     matr.head = nullptr;
     matr.tail = nullptr;
     std::cout << "Введите количество ненулевых элементов" << " " << std::endl;
-    std::cin>>n;
+    std::cin >> n;
     if(n == 0){
         std::cout << "Количество ненулевых элементов равно 0" << " " << std::endl;
-        return 1;
-    }
-    while(n!= 0){
-        int y;
-        std::cout << "Введите координату Y элемента матрицы" << " " << std::endl;
-        std::cin>>y;
-        Line* ptr = matrixSearch(matr, y);
-        if (ptr == nullptr){
-            ptr = new Line;
-            ptr->head = nullptr;
-            ptr->next = nullptr;
-            ptr->tail = nullptr;
-            ptr->prev = matr.tail;
-            ptr->y = y;
-            if (matr.tail != nullptr)
-                matr.tail->next = ptr;
-            if (matr.head == nullptr)
-                matr.head = ptr;
-            matr.tail = ptr;
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < length; j++) {
+                std::cout << 0 << " ";
+            }
+        std::cout << std::endl;
         }
-        Node* node = new Node;
-        node->next = nullptr;
-        std::cout << "Введите координату X элемента матрицы" << " " << std::endl;
-        std::cin>> node->x;
-        std::cout << "Введите информацию" << " " << std::endl;
-        std::cin>> node->info;
-        if (ptr->tail != nullptr)
-            ptr->tail->next = node;
-        node->prev = ptr->tail;
-        ptr->tail = node;
-        if (ptr->head == nullptr)
-            ptr->head = node;
-        n--;
     }
-    return 0;
+    else{
+        while(n!= 0){
+            int y;
+
+            do{
+                std::cout << "Введите координату Y элемента матрицы" << " " << std::endl;
+                std::cin >> y;
+                if(y <= height) break;
+                else std::cout << "Координата больше размера матрицы" << " " << std::endl;
+            }while(y > height);
+
+            Line* ptr = matrixSearch(matr, y);
+            if (ptr == nullptr){
+                ptr = new Line;
+                ptr->head = nullptr;
+                ptr->next = nullptr;
+                ptr->tail = nullptr;
+                ptr->prev = matr.tail;
+                ptr->y = y;
+                if (matr.tail != nullptr)
+                    matr.tail->next = ptr;
+                if (matr.head == nullptr)
+                    matr.head = ptr;
+                matr.tail = ptr;
+            }
+            Node* node = new Node;
+            node->next = nullptr;
+
+            do{
+            std::cout << "Введите координату X элемента матрицы" << " " << std::endl;
+            std::cin >> node->x;
+            if(node->x <= length) break;
+            else std::cout << "Координата больше размера матрицы" << " " << std::endl;
+            }while(node->x > length);
+
+            std::cout << "Введите информацию" << " " << std::endl;
+            std::cin >> node->info;
+            if (ptr->tail != nullptr)
+                ptr->tail->next = node;
+            node->prev = ptr->tail;
+            ptr->tail = node;
+            if (ptr->head == nullptr)
+                ptr->head = node;
+            n--;
+        }
+    }
 }
 
 
@@ -142,14 +160,4 @@ void generateVector(Matrix& matr){
     }
 }
 
-/*
-Если количество ненулевых элементов 0
-if (max == 0) {
-    for (int i =0; i < strok; i++) {
-        for (int j = 0; j < columns; j++) {
-            cout << 0 << " ";
-        }
-        cout << endl;
-    }
-}
-*/
+

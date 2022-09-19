@@ -16,9 +16,8 @@ typedef struct Matrix {
     Line* head, * tail;
 }Matrix;
 
-
 Line* matrixSearch(Matrix& matr, int searched);
-int inputMatrix(Matrix& matr, int length, int height);
+void inputMatrix(Matrix& matr, int length, int height);
 void printMatrix(Matrix& matr);
 int comparisonLines(Matrix& matr);
 void generateVector(Matrix& matr /*Vector& vect*/);

@@ -31,13 +31,13 @@ typedef struct Matrix {
     Line* head, * tail;
 }Matrix;
 
-typedef struct Vector {
+/*typedef struct Vector {
     int size, * info;
-}Vector;
+}Vector;*/
 
 
 Line* matrixSearch(Matrix& matr, int searched);
 int inputMatrix(Matrix& matr, int length, int height);
 void printMatrix(Matrix& matr);
 int comparisonLines(Matrix& matr);
-void generateVector(Matrix& matr, Vector& vect);
+void generateVector(Matrix& matr /*Vector& vect*/);

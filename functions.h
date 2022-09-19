@@ -1,20 +1,5 @@
 #include <iostream>
 
-// typedef struct Node{
-//     int x,y, info;
-//     struct Node *next;
-//     struct Node *prev;
-// }Node;
-
-// typedef struct Matrix{
-//     int length, height;
-//     Node *head, *tail;
-// }Matrix;
-
-// typedef struct Vector{
-//     int *info, size; 
-// }Vector;
-
 typedef struct Node {
     int x, info;
     struct Node* next, * prev;
@@ -30,10 +15,6 @@ typedef struct Matrix {
     int lenght, height;
     Line* head, * tail;
 }Matrix;
-
-/*typedef struct Vector {
-    int size, * info;
-}Vector;*/
 
 
 Line* matrixSearch(Matrix& matr, int searched);

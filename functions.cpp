@@ -4,40 +4,6 @@
 #include <vector>
 #include <algorithm>
 
-// 5 4 3 1 2 5 1 4 56 2 3 45
-
-//int inputMatrix(Matrix& matr, int length, int height){
-    // std::cin>>matr.length;
-    // std::cin>>matr.height;
-    // matr.head = NULL;   
-    // for(int i = 0; i< matr.height; i++){
-    //     for(int j = 0; j< matr.length; j++){
-    //         int a;
-    //         std::cin>>a;
-    //         if (a!=0){
-    //             Node* n = new Node;
-    //             n->info = a;
-    //             n->y = i;
-    //             n->x = j;
-    //             n->next = matr.head;
-    //             n->prev = NULL;
-    //             if(matr.head != NULL)
-    //                 matr.head->prev = n;
-    //             else
-    //                 matr.tail = n;
-    //             matr.head = n;
-    //         }
-    //     }   
-    // }
-    // сооздашь ввод количества не нулевых элементов
-    // цикл с количеством итераций равный количеству не нулл элементов
-    // вводишь новый элемент: его координаты x, y и информацию по этим координатам
-    // ищешь в списке matrix есть ли там линия с такой координатой y
-    // если нет, тогда создаешь через new
-    // и закидываешь туда новый элемент Node, тоже созданный черз new
-    // не забывай, что список дву связный
-//}  
-
 
 int inputMatrix(Matrix& matr, int length, int height){
     int n;
@@ -187,58 +153,3 @@ if (max == 0) {
     }
 }
 */
-
-/*void printMatrix(Matrix& matr){
-    auto p = matr.tail;
-    int count = p->y;
-    while (p!= NULL){
-        if (count != p->y)
-            std::cout << std::endl;
-        count = p->y;
-        std::cout << p->info << " ";
-        p->prev;
-    }
-    создаешь указатель на первую строку 
-    цикл, пока этот указатель не NULL
-    в нем создаешь указатель на первый элемент строки 
-    цикл, пока указатель на элемент строки не равен NULL
-}
-
-int scanLine(Matrix& matr){                        //0 - if b1 > b2 
-    int* myVector = new int[matr.height];          //1 - if b1 < b2
-    int b;                                         //2 - if b1 = b2
-    int n;                                          
-    for(int j = 0; j < matr.height; j++){
-        for(int i = 0; i < matr.length; i++){
-            ///getline(n , string ," ");
-        myVector[j] = b;
-        }    
-    if (myVector[j] > myVector[j++] || myVector[matr.height--] > myVector[0]){
-        return 0;    
-    }
-    else if (myVector[j] < myVector[j++] || myVector[matr.height--] < myVector[0]){
-        return 1;
-    }
-    else if (myVector[j] == myVector[j++] || myVector[matr.height--] == myVector[0]){
-        return 2;
-    }
-    }
-    создаешь указатель на первую строку в матрице, ptr1
-    и указаетль на след строку, ptr2
-    цикл, пока ptr1 не равен NULL
-    смотришь какие элементы есть в ptr1, но нет в ptr2
-    записываешь в вектор результат 
-    делаешь ptr1 = ptr1->next; ptr2 = ptr2->next;
-    проверяешь, что ptr2 != NULL
-    Если равно, тогда ptr2 = matr.head
-    после это цикл завершиться
-
-    НАПОМИНАЮ, то что ты создал с помощью new надо удалить с помощью delete
-    И для new нет realloc как в си, поэтому ты копирушь массив в новый массив, который больше, и удаляешь старый
-    и нужно организовать проверку ввода!!!!
-
-    try {
-        int* arr = new int[10]
-    }
-
-}*/
